@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História e Cultura Negra | Portal Educativo</title>
+    <style>
+        /* Reset e Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --cor-primaria: #2c1e16;
+            --cor-secundaria: #d97706;
+            --cor-destaque: #15803d;
+            --cor-fundo: #faf8f5;
+            --cor-texto: #1f2937;
+            --cor-card: #ffffff;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            background-color: var(--cor-primaria);
+            color: #fff;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .container-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            color: var(--cor-secundaria);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(44, 30, 22, 0.8), rgba(44, 30, 22, 0.8)), 
+                        url('https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #e5e7eb;
+        }
+
+        /* Seções Gerais */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .titulo-secao {
+            font-size: 2rem;
+            color: var(--cor-primaria);
+            border-left: 5px solid var(--cor-secundaria);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Linha do Tempo Histórica */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .evento-historico {
+            background: var(--cor-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--cor-destaque);
+        }
+
+        .evento-historico span {
+            font-weight: bold;
+            color: var(--cor-secundaria);
+            font-size: 1.1rem;
+        }
+
+        /* Grid de Personalidades */
+        .grid-personalidades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--cor-card);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #d1d5db;
+        }
+
+        .card-conteudo {
+            padding: 1.5rem;
+        }
+
+        .card-conteudo h3 {
+            color: var(--cor-primaria);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-conteudo .area {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Curiosidades */
+        .grid-curiosidades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .box-curiosidade {
+            background-color: var(--cor-primaria);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .box-curiosidade h3 {
+            color: var(--cor-secundaria);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--cor-primaria);
+            color: #d1d5db;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .container-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container-header">
+            <h1>Raízes & Legado</h1>
+            <nav>
+                <ul>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#personalidades">Personalidades</a></li>
+                    <li><a href="#curiosidades">Curiosidades</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <h2>Conhecer para Valorizar</h2>
+        <p>Um espaço educativo dedicado à memória, resistência, ciência e cultura da população negra no Brasil e no mundo.</p>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção 1: Marcos Históricos -->
+        <section id="historia">
+            <h2 class="titulo-secao">Marcos Históricos</h2>
+            <div class="timeline">
+                <div class="evento-historico">
+                    <span>Século XVII - Quilombo dos Palmares</span>
+                    <p>Localizado na Serra da Barriga (atual Alagoas), foi o maior símbolo de resistência à escravidão nas Américas, abrigando milhares de pessoas livres e organizadas socialmente.</p>
+                </div>
+                <div class="evento-historico">
+                    <span>1888 - Abolição Formal e Luta Pós-Abolição</span>
+                    <p>A assinatura da Lei Áurea encerrou legalmente a escravidão no Brasil, mas movimentos negros continuaram lutando por direitos civis, acesso à educação, terra e trabalho digno.</p>
+                </div>
+                <div class="evento-historico">
+                    <span>2003 - Lei 10.639</span>
+                    <p>Tornou obrigatório o ensino da História e Cultura Afro-Brasileira nas escolas de ensino fundamental e médio de todo o Brasil, valorizando a identidade nacional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Personalidades Negras -->
+        <section id="personalidades">
+            <h2 class="titulo-secao">Personalidades que Transformaram o Mundo</h2>
+            <div class="grid-personalidades">
+                
+                <!-- Card 1 -->
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Representação de pesquisa científica e engenharia">
+                    <div class="card-conteudo">
+                        <span class="area">Ciência & Matemática</span>
+                        <h3>Katherine Johnson</h3>
+                        <p>Matemática da NASA cujos cálculos de mecânica orbital foram essenciais para o sucesso dos primeiros voos espaciais tripulados dos Estados Unidos.</p>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="Livros e escrita representando literatura">
+                    <div class="card-conteudo">
+                        <span class="area">Literatura Brasileira</span>
+                        <h3>Machado de Assis</h3>
+                        <p>Um dos maiores escritores da língua portuguesa, fundador e primeiro presidente da Academia Brasileira de Letras, autor de obras-primas como Dom Casmurro.</p>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Equipamento médico e ciência">
+                    <div class="card-conteudo">
+                        <span class="area">Medicina & Inovação</span>
+                        <h3>Jaqueline Goes de Jesus</h3>
+                        <p>Biomédica brasileira que liderou a equipe responsável pelo sequenciamento do genoma do vírus SARS-CoV-2 no Brasil em tempo recorde.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Seção 3: Curiosidades -->
+        <section id="curiosidades">
+            <h2 class="titulo-secao">Você Sabia? (Curiosidades)</h2>
+            <div class="grid-curiosidades">
+                <div class="box-curiosidade">
+                    <h3>A Primeira Universidade do Mundo</h3>
+                    <p>A Universidade de Al-Qarawiyyin, fundada em 859 d.C. no Marrocos por Fatima al-Fihri, é reconhecida pela UNESCO e pelo Guinness como a instituição de ensino superior mais antiga em funcionamento contínuo.</p>
+                </div>
+                <div class="box-curiosidade">
+                    <h3>Invenções no Cotidiano</h3>
+                    <p>O inventor negro Garrett Morgan criou, em 1923, o semáforo de três sinais (com a luz amarela de atenção), aumentando drasticamente a segurança no trânsito moderno.</p>
+                </div>
+                <div class="box-curiosidade">
+                    <h3>Vocabulário Brasileiro</h3>
+                    <p>Palavras do nosso dia a dia como "cafuné", "moleque", "quitanda", "caçula" e "banguela" têm origem nas línguas africanas banto, especialmente o quimbundo.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Projeto Educativo Escolar • Desenvolvido em HTML5 e CSS3</p>
+    </footer>
+
+</body>
+</html>
